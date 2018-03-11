@@ -11,6 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/dist/components/popup.min.css"/>
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css"> -->
+		<script type="text/javascript" src="assets/css/dist/components/popup.min.js"></script>
+		<!-- <link rel="stylesheet" href="assets/css/dist/components/icon.css" /> -->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
@@ -26,9 +30,23 @@
 						<p>Commack High School Senior</p>
 						<nav>
 							<ul>
-								<li><a href="##" class="icon fa-file"><span class="label">Resume</span></a></li>
-								<li><a href="https://www.researchgate.net/scientific-contributions/2113152485_Jake_A_Nieto" class="icon fa-flask"><span class="label">Research Gate</span></a></li>
-								<li><a href="mailto:jake.a.nieto@gmail.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							<li data-inverted="" data-tooltip="Resume" data-position="bottom center">
+								<a href="##" class="tooltip icon fa-file">
+									<span class="label">Resume</span>
+								</a>
+							</li>
+							<li data-inverted="" data-tooltip="Newspaper Mentions" data-position="bottom center">
+								<a href="publications.html" class="icon fa-newspaper-o">
+									<span class="label">Newspaper Mentions</span>
+								</a>
+							</li>
+								<li data-inverted="" data-tooltip="Research Publications" data-position="bottom center">
+									<a href="https://www.researchgate.net/scientific-contributions/2113152485_Jake_A_Nieto" class="icon fa-flask"><span class="label">Research Gate</span></a></li>
+								<li data-inverted="" data-tooltip="Email" data-position="bottom center">
+									<a href="mailto:jake.a.nieto@gmail.com" class="icon fa-envelope-o">
+										<span class="label">Email</span>
+									</a>
+								</li>
 							</ul>
 						</nav>
 					</header>
