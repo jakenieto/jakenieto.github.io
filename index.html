@@ -6,6 +6,7 @@
 -->
 <html>
 	<head>
+		
 		<title>Jake Nieto</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,18 +16,23 @@
 		<link rel="stylesheet" href="assets/css/dist/components/popup.min.css"/>
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css"> -->
 		<script type="text/javascript" src="assets/css/dist/components/popup.min.js"></script>
+		<script type="module" src="./boids/main.js"></script>
 		<!-- <link rel="stylesheet" href="assets/css/dist/components/icon.css" /> -->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		
 	</head>
 	<body class="loading">
+		
 		<div id="wrapper">
 			<div id="bg"></div>
+			<canvas id="boids"></canvas>
 			<div id="overlay"></div>
 			<div id="main">
-
+				
 				<!-- Header -->
 					<header id="header">
+						
 						<h1>Jake Nieto</h1>
             <p>Student at Brown University</p>
             <p> Concentrating in Computer Science </p>
@@ -52,19 +58,20 @@
 							</ul>
 						</nav>
 						
+						
 					</header>
 
 				<!-- Footer -->
 		
 					<footer id="footer">
 						<span class="copyright">&copy; Jake Nieto 2020</span>
-						
 					</footer>
 					
 
 			</div>
 			
 		</div>
+
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script>
 			window.onload = function() { document.body.className = ''; }
@@ -72,4 +79,5 @@
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
 	</body>
+	
 </html>
