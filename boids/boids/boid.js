@@ -7,8 +7,9 @@ const maxForce = 0.1;
 const neighborDist = 40;
 
 export default class Boid {
-    constructor(canvas, pos, startVelocity, acc,flockList,id) {
-        this.canvas = canvas
+    constructor(pos, startVelocity, acc,flockList,id) {
+        
+        this.canvas = document.querySelector('canvas') 
         this.circle = new Circle(3,pos.components[0],pos.components[1],() => this.flock())
         this.position = pos
         this.velocity = startVelocity

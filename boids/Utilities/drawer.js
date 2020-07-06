@@ -16,7 +16,6 @@ export default class Drawer {
     }
 
     draw() {
-
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.context.fillStyle = "#ffffff00";
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
