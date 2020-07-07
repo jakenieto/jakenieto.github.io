@@ -34,11 +34,9 @@ static startBoids(drawer) {
 
     //generate random starting coords
     for (let index = 0; index < num; index++) {
-        let x = Math.cos((2*Math.PI * index)/num) 
-        let y = Math.sin((2*Math.PI * index)/num) 
-        let radius = 40
-        let startX = e.pageX + radius * x
-        let startY = e.pageY + radius * y
+        let radius = 150
+        let startX = e.pageX - ((radius/index * Math.sqrt(3))/2)
+        let startY = e.pageY + ( Math.pow(-1,index) * radius/(2*index) )
        
         //create position vector
         let pos = new Vector([startX,startY])
