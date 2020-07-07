@@ -8,5 +8,5 @@ const context = canvas.getContext('2d') // Get context to access 2D canvas funct
 context.globalAlpha = 0.0;
 let drawer = new Drawer(canvas,context,window.innerWidth,window.innerHeight)
 Boids.startBoids(drawer)
-document.body.addEventListener('click', (e) => Boids.addBoid(e,drawer), true); 
+document.body.addEventListener('click', (e) => {Boids.addBoid(e,drawer,8)}, true); 
 drawer.draw()

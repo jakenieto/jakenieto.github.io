@@ -1,18 +1,22 @@
 import Circle from "../Utilities/circle.js"
 import Vector from "../Utilities/vector.js";
+import Bird from "../Utilities/bird.js";
 
-const desiredSeparation = 50.0;
-const maxVelocity = 5;
+const desiredSeparation = 200.0;
+const maxVelocity = 4;
 const maxForce = 0.1;
-const neighborDist = 40;
+const neighborDist = 250;
 
 export default class Boid {
     constructor(pos, startVelocity, acc,flockList,id) {
         
         this.canvas = document.querySelector('canvas') 
-        this.circle = new Circle(3,pos.components[0],pos.components[1],() => this.flock())
-        this.position = pos
         this.velocity = startVelocity
+        this.circle = new Bird(4,pos.components[0],pos.components[1],this.velocity,() => this.flock())
+        
+        //new Circle(3,pos.components[0],pos.components[1],() => this.flock())
+        this.position = pos
+       
         this.acceleration = acc
         this.flockList = flockList
         this.mousePos = {}
@@ -41,10 +45,10 @@ export default class Boid {
         let mou = this.mouseBehav()
 
         //Arbitrarily weight these forces
-        sep.scale(1.5);
+        sep.scale(2);
         ali.scale(3.5);
-        coh.scale(1.5);
-        mou.scale(-10)
+        coh.scale(2);
+        mou.scale(-8)
         //Add the force vectors to acceleration
         this.applyForce(sep);
         this.applyForce(ali);
@@ -183,6 +187,7 @@ export default class Boid {
         
         this.circle.centerX += this.velocity.components[0]
         this.circle.centerY += this.velocity.components[1]
+        this.circle.velocity = this.velocity
 
         if (this.circle.centerX  < -1 * this.circle.radius && this.velocity.components[0]  < 0) {
             this.circle.centerX = window.innerWidth

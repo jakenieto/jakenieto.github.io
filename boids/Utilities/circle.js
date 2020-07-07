@@ -15,7 +15,7 @@ export default class Circle {
         context.arc(this.centerX, this.centerY, this.radius, 0, Math.PI * 2, false);
         context.closePath(); 
         // color in the circle
-        context.fillStyle = "#EEEEEE";
+        context.fillStyle = "#000000";
         context.fill();
     
     }

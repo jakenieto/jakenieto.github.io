@@ -1,7 +1,7 @@
 import Boid from "./boid.js"
 import Vector from "./../Utilities/vector.js"
 
-const populationSize = 50;
+const populationSize = 25;
 
 
 let population = [];
@@ -17,9 +17,9 @@ static startBoids(drawer) {
         //create position vector
         let pos = new Vector([startX,startY])
         //create random acceleration vector
-        let acc = new Vector([.5,.5])
+        let acc = new Vector([.5,0])
         //create starting 0 velocity vector
-        let v = new Vector([1,1])
+        let v = new Vector([.5,0])
         let newBoid = new Boid(pos,v,acc,population,index);
         //add boid to drawer
         drawer.addActor(newBoid.circle)
@@ -29,24 +29,33 @@ static startBoids(drawer) {
 
 }
 
-    static addBoid(e, drawer) {
+    static addBoid(e, drawer,num) {
+        if (population.length >= 100) return
 
     //generate random starting coords
-    let startX = e.pageX 
-    let startY = e.pageY
-    //create position vector
-    let pos = new Vector([startX,startY])
-    //create random acceleration vector
-    let acc = new Vector([.5,.5])
-    //create starting 0 velocity vector
-    let v = new Vector([1,1])
-    let id = population[population.length-1].id + 1
+    for (let index = 0; index < num; index++) {
+        let x = Math.cos((2*Math.PI * index)/num) 
+        let y = Math.sin((2*Math.PI * index)/num) 
+        let radius = 40
+        let startX = e.pageX + radius * x
+        let startY = e.pageY + radius * y
+       
+        //create position vector
+        let pos = new Vector([startX,startY])
+        //create random acceleration vector
+        let acc = new Vector([0,0])
+        //create starting 0 velocity vector
+        let v = new Vector([0.01,0.0])
+        let id = population[population.length-1].id + 1
 
-    let newBoid = new Boid(pos, v, acc, population,id);
-    //add boid to drawer
-    drawer.addActor(newBoid.circle)
-    //push the boid to the population list
-    population.push(newBoid) 
+        let newBoid = new Boid(pos, v, acc, population,id);
+        //add boid to drawer
+        drawer.addActor(newBoid.circle)
+        //push the boid to the population list
+        population.push(newBoid) 
+        
+    }
+    
 }
 
 }
